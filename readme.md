@@ -5,5 +5,5 @@
 Via Composer
 
 ```
-composer require fangx/hyperf-package
+composer require fangx/laravel-package
 ```
