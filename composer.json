@@ -1,0 +1,50 @@
+{
+  "name": "fangx/laravel-package",
+  "type": "project",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf"
+  ],
+  "description": "Laravel Component Creator.",
+  "authors": [
+    {
+      "name": "nfangxu",
+      "email": "nfangxu@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "composer/composer": "^1.5",
+    "phpunit/phpunit": "*",
+    "phpstan/phpstan": "^0.12",
+    "friendsofphp/php-cs-fixer": "^2.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Installer\\": "installer/"
+    },
+    "files": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fangx\\Tests\\": "tests/"
+    }
+  },
+  "bin": [
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "pre-install-cmd": "Installer\\Script::install",
+    "pre-update-cmd": "Installer\\Script::install",
+    "cs-fix": "php-cs-fixer fix $1",
+    "test": "./vendor/bin/phpunit -c phpunit.xml --color=always",
+    "test-coverage": "php -d zend_extension=xdebug ./vendor/bin/phpunit -c phpunit.xml --color=always --coverage-html .codeCoverage"
+  }
+}
